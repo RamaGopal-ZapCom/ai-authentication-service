@@ -1,0 +1,54 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: authentication-service
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/customer-support-agent
+      auto-index-creation: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: itsyou3004@gmail.com
+    password: heop ykla iist rmbk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+##debug: true
+#mongock:
+#  enabled: true
+#  change-logs-scan-package: com.zapcom.configuration.DatabaseChangeLog
+#  enabled: true
+#    migration-scan-package: com.zapcom.configuration
+
+jwt:
+  public:
+    key:
+    classpath: certs/public.pem
+  private:
+    key: classpath:certs/private.pem
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    com:
+     github:
+       cloudyrock:
+        mongock=DEBUG:
+  org.springframework.security: DEBUG
+
+
+
+
+
+
+
